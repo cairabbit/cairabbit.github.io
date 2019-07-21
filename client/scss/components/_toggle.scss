@@ -1,0 +1,86 @@
+$_line_color: $white;
+$_line_width: 1.11111em;
+$_line_height: .15873em;
+
+
+.toggler {
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    & .menu-icon {
+        position: relative;
+        display: inline-block;
+        top: -2px;
+        transition: .3s;
+        cursor: pointer;
+        user-select: none;
+
+        & .lines {
+            display: inline-block;
+            width: $_line_width;
+            height: $_line_height;
+            border-radius: 2px;
+            vertical-align: middle;
+            position: relative;
+            transition: background .3s .6s ease;
+            background: $_line_color;
+
+            &::before, &::after {
+                @include transition(top .3s .6s ease,transform .3s ease);
+                display: inline-block;
+                width: 1.11111em;
+                height: .14873em;
+                border-radius: 2px;
+                vertical-align: middle;
+                background: $_line_color;
+                position: absolute;
+                content: '';
+                left: 0;
+            }
+
+            &::before {
+                transform: rotate3d(0,0,1,0deg);
+                top: .3em;
+            }
+
+            &::after {
+                transform: rotate3d(0,0,1,0deg);
+                top: -0.3em;
+            }
+        }
+    }
+
+
+    &.active {
+        & .menu-icon {
+            & .lines {
+                @include transition(background .3s 0s ease);
+                background: transparent;
+
+
+                &::before, &::after {
+                    @include transition(top .3s ease,transform .3s .5s ease);
+                    transform-origin: 50% 50%;
+                    top: 0;
+                }
+
+                &::before {
+                    transform: rotate3d(0,0,1,45deg);
+                }
+
+                &::after {
+                    transform: rotate3d(0,0,1,-45deg);
+                }
+            }
+        }
+    }
+}
+
+*:not(.toggler)[data-toggle-for] {
+    display: none;
+}
+
+*:not(.toggler).active[data-toggle-for] {
+    display: block;
+}

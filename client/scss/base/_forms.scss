@@ -1,0 +1,345 @@
+
+.form-control {
+    display: block;
+    padding: $rem-1 * 0.375 $rem-1 * 0.75;
+    font-size: $rem-1;
+    line-height: $line-height;
+    color: lighten($color-text, 20%);
+    background: transparent;
+    background-clip: padding-box;
+    border: solid 1px $color-primary;
+    // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+    @if $enable-rounded {
+        border-radius: $rem-1 * 0.25;
+    }
+    @else {
+        border-radius: 0;
+    }
+
+    box-shadow: none;
+    @include transition($input-transition);
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+        background-color: transparent;
+        border: 0;
+    }
+    // Customize the `:focus` state to imitate native WebKit styles.
+    &:focus {
+        border-color: darken($color-primary, 10%);
+        outline: 0;
+        box-shadow: none;
+    }
+    // Placeholder
+    &::placeholder {
+        color: lighten($color-text, 30%);
+        // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+        opacity: 1;
+    }
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    &:disabled,
+    &[readonly] {
+        background-color: $gray-200;
+        // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+        opacity: 1;
+    }
+}
+
+select.form-control {
+    &:focus::-ms-value {
+        // Suppress the nested default white text on blue background highlight given to
+        // the selected option text when the (still closed) <select> receives focus
+        // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+        // match the appearance of the native widget.
+        // See https://github.com/twbs/bootstrap/issues/19398.
+        color: $color-text;
+    }
+}
+
+// Make file inputs better match text inputs by forcing them to new lines.
+.form-control-file,
+.form-control-range {
+    display: block;
+    width: 100%;
+}
+
+.form-control-sm {
+    padding: $rem-1 * 0.25 $rem-1 * 0.5;
+    font-size: $rem-1 * 0.875;
+}
+
+select.form-control-sm {
+    &:not([size]):not([multiple]) {
+        height: $rem-1*1.375*$line-height;
+    }
+}
+
+.form-control-lg {
+    padding: $rem-1 * 0.5 $rem-1;
+    font-size: $rem-1 * 1.25;
+}
+
+select.form-control-lg {
+    &:not([size]):not([multiple]) {
+        height: $rem-1*1.75*$line-height;
+    }
+}
+
+.checkbox, .radio {
+    display: inline;
+    position: relative;
+    cursor: pointer;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    width: auto !important;
+    @include userselect(none);
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:disabled {
+            & + i {
+                border-color: $gray-500;
+            }
+        }
+    }
+
+    & i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border: solid 1px $color-primary;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+
+    & input:checked ~ i {
+        background-color: $color-primary;
+
+        &:after {
+            display: block;
+        }
+    }
+
+    &:hover {
+        & input ~ i {
+            background-color: #ccc;
+        }
+    }
+
+    & + label {
+        width: auto !important;
+        margin-left: $rem-1 * 1.75 !important;
+
+        &:after {
+            content: "" !important;
+        }
+
+        & + .checkbox, & + .radio {
+            margin-left: $rem-1 !important;
+        }
+    }
+}
+
+.checkbox {
+    & i {
+        &:after {
+            left: 8px;
+            top: 3px;
+            width: 8px;
+            height: 14px;
+            border: solid 1px white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.radio {
+    & i {
+        border-radius: 50%;
+
+        &:after {
+            top: 9px;
+            left: 9px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: white;
+        }
+    }
+}
+
+.invalid-message {
+    padding: $rem-1 * 0.5 0 $rem-1 * 0.5 $rem-1 * 8;
+    font-style: italic;
+    color: $color-danger;
+    width: 100%;
+
+    &:before {
+        padding-right: $rem-1 * 0.5;
+    }
+}
+
+
+.form-container {
+    margin-top: $rem-1*3;
+    margin-bottom: $rem-1*2;
+    display: flex;
+    justify-content: space-around;
+
+    & > div {
+        padding: $rem-1;
+
+        & h3 {
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    & .form-footer {
+        text-align: center;
+        margin-top: $rem-1;
+        margin-bottom: $rem-1;
+
+        & .btn {
+            width: 80%;
+        }
+    }
+
+    & nav {
+        & .nav {
+            & li {
+                margin-right: $rem-1 * 0.5;
+
+                & a {
+                    text-align: center;
+
+                    & i {
+                        font-size: $rem-1 * 2;
+                    }
+                }
+            }
+        }
+    }
+
+    & .row:not(:first-child) {
+        margin-top: $rem-1 * .25;
+    }
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: row;
+}
+
+fieldset {
+    border: solid 1px $gray-400;
+    padding: $rem-1 * .5;
+
+    & legend {
+        width: auto;
+        padding-left: $rem-1 * .5;
+        padding-right: $rem-1 * .5;
+    }
+
+    & + fieldset {
+        margin-top: $rem-1 * .25;
+    }
+}
+
+.form-group {
+    margin-bottom: $rem-1 * 0.5;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+
+    & > .form-control {
+        &:not([type="checkbox"]):not([type="radio"]):not(.checkbox):not(.radio) {
+            flex-grow: 6;
+        }
+    }
+
+    & > .control-container {
+        flex-grow: 6;
+
+        & + .control-container {
+            margin-top: $rem-1 *.25;
+        }
+    }
+
+    & > label {
+        width: $rem-1*8;
+        flex-grow: 0;
+        text-align: right;
+        padding-right: 8px;
+
+        &:after {
+            content: ":";
+            padding-left: 3px;
+        }
+    }
+}
+
+.nav li .form-group {
+  margin-bottom: 0;
+  label {
+    width: auto;
+  }
+}
+
+.input-group {
+    display: flex;
+
+    & > * {
+        flex-grow: 0;
+        align-items: center;
+    }
+
+    & > .form-control {
+        flex-grow: 5;
+        border-right-color: transparent;
+    }
+
+    & + .input-group, & + .btn-group {
+        margin-top: $rem-1 * .5;
+    }
+}
+
+.has-error {
+    &.form-control {
+        border-color: $color-danger;
+    }
+
+    & .input-group {
+        & > .form-control {
+            border-left-color: $color-danger;
+            border-top-color: $color-danger;
+            border-bottom-color: $color-danger;
+        }
+
+        & > .btn {
+            border-right-color: $color-danger;
+            border-top-color: $color-danger;
+            border-bottom-color: $color-danger;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.login, .register {
+    & .form-container {
+        & > div {
+            width: 98%;
+
+            &:first-child {
+                display: none;
+            }
+
+            &:last-child {
+                background: $white;
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+
+    .login, .register {
+        & .form-container {
+            & > div {
+                width: 30%;
+
+                &:first-child {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,145 @@
+.btn {
+    display: inline-block;
+    font-weight: $font-weight-normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: solid 1px transparent;
+    padding: $rem-1 * 0.375 $rem-1 * 0.75;
+    font-size: $rem-1;
+    line-height: $line-height;
+    // Manually declare to provide an override to the browser default
+    @if $enable-rounded {
+        border-radius: $rem-1 * 0.25;
+    }
+    @else {
+        border-radius: 0;
+    }
+
+    @include transition($btn-transition);
+    // Share hover and focus styles
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none;
+    }
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+        opacity: 0.65;
+        box-shadow: none;
+    }
+    // Opinionated: add "hand" cursor to non-disabled .btn elements
+    &:not([disabled]):not(.disabled) {
+        cursor: pointer;
+    }
+
+    &:not([disabled]):not(.disabled):active,
+    &:not([disabled]):not(.disabled).active {
+        background-image: none;
+        box-shadow: none;
+    }
+
+    span:last-child {
+        margin-left: 6px;
+    }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $colors {
+    $hover-background: darken($value, 7.5%);
+    $hover-border: darken($value, 10%);
+    $active-background: darken($value, 10%);
+    $active-border: darken($value, 12.5%);
+    .btn-#{$color} {
+        color: color-yiq($value);
+        background-color: $value;
+        border-color: $value;
+        box-shadow: none;
+
+        &:hover,
+        &:focus {
+            color: color-yiq($hover-background);
+            background-color: $hover-background;
+            border-color: $hover-border;
+        }
+        // Disabled comes first so active can properly restyle
+        &.disabled,
+        &:disabled {
+            background-color: $value;
+            border-color: $value;
+        }
+
+        &:not([disabled]):not(.disabled):active,
+        &:not([disabled]):not(.disabled).active,
+        .show > &.dropdown-toggle {
+            color: color-yiq($active-background);
+            background-color: $active-background;
+            border-color: $active-border;
+        }
+    }
+}
+
+@each $color, $value in $colors {
+    .btn-outline-#{$color} {
+        $color-hover: $white;
+        $active-background: $value;
+        $active-border: $value;
+        color: $value;
+        background-color: transparent;
+        background-image: none;
+        border-color: $value;
+
+        &:hover,
+        &:focus {
+            color: color-yiq($value);
+            background-color: $active-background;
+            border-color: $active-border;
+        }
+
+        &.disabled,
+        &:disabled {
+            color: $color;
+            background-color: transparent;
+        }
+
+        &:not([disabled]):not(.disabled):active,
+        &:not([disabled]):not(.disabled).active,
+        .show > &.dropdown-toggle {
+            color: color-yiq($color-hover);
+            background-color: $active-background;
+            border-color: $active-border;
+            // Avoid using mixin so we can pass custom focus shadow properly
+            box-shadow: 0 0 0 $rem-1*0.2 rgba($value, .5);
+        }
+    }
+}
+
+.btn-group {
+    display: flex;
+    margin-top: $rem-1 * 0.25;
+}
+.btn-lg {
+    padding: $rem-1 * 0.5 $rem-1;
+    font-size: $rem-1 * 1.25;
+}
+.btn-sm {
+    padding: $rem-1 * 0.25 $rem-1 * 0.5;
+    font-size: $rem-1 * 0.875;
+}

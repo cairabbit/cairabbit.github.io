@@ -1,0 +1,128 @@
+$_fix-top-height: 3.5rem;
+$_fix-bottom-height: 3.5rem;
+$_left-pane-width: 80%;
+$_right-pane-width: 80%;
+$_fix-main-width: percentage(100% / ($_left-pane-width + 100%));
+
+
+.pane {
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+
+    &.left-pane {
+        width: $_left-pane-width;
+        left: -1 * $_left-pane-width;
+        @include transition(left .8s ease);
+
+        &.active {
+            left: 0;
+            @include transition(left .8s ease);
+
+            & ~ .main-pane {
+                left: $_left-pane-width;
+                @include transition(left .8s ease);
+            }
+        }
+    }
+
+    &.right-pane {
+        width: $_right-pane-width;
+        left: 100%;
+        @include transition(left .8s ease);
+
+        &.active {
+            left: 100% - $_right-pane-width;
+            @include transition(left .8s ease);
+
+            & ~ .main-pane {
+                left: -1 * $_right-pane-width;
+                @include transition(left .8s ease);
+            }
+        }
+    }
+
+    &.main-pane {
+        width: 100%;
+        left: 0;
+        @include transition(left .8s ease);
+
+        & main {
+            width: 100%;
+            height: calc(100% - #{$_fix-top-height} - #{$_fix-bottom-height}) !important;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        & header {
+            width: 100%;
+            height: $_fix-top-height;
+            overflow: hidden;
+        }
+
+        & footer {
+            width: 100%;
+            height: $_fix-bottom-height;
+            overflow: hidden;
+        }
+    }
+
+    &.left-pane, &.right-pane {
+
+        & > * {
+            background: $color-primary;
+            padding-bottom: $rem-1;
+            min-height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            & h3 {
+                color: $white;
+                padding: $rem-1;
+                border-bottom: solid 1px $gray-100;
+            }
+
+            & .nav {
+                display: flex;
+                flex-flow: column;
+                margin-top: 0;
+
+                & > li {
+                    padding: $rem-1 * 0.25 $rem-1;
+                    color: $white;
+
+                    & > a {
+                        display: inline-block;
+                        color: $white;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .pane {
+        &.left-pane, &.right-pane {
+            display: none;
+        }
+
+        &.main-pane {
+            & header {
+                height: auto;
+            }
+
+            & footer {
+                height: auto;
+            }
+
+            & main {
+                height: auto !important;
+                padding-bottom: $rem-1;
+            }
+        }
+    }
+}

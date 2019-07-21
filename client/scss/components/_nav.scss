@@ -1,0 +1,178 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: $rem-1 * 0.1;
+    margin: 0;
+
+    & > li {
+        padding: $rem-1 * 0.25;
+
+        &.brand {
+            font-weight: bold;
+            margin-right: $rem-1 * 1.5;
+
+            &:hover {
+                background: none;
+            }
+        }
+
+        &.active {
+            font-weight: bold;
+            color: $color-primary;
+
+            & a {
+                color: $color-primary;
+            }
+        }
+
+        & a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        & .form-control {
+            display: inline;
+            width: auto;
+            height: auto;
+            padding: 0.1rem;
+            font-size: $rem-1-lg * 0.5;
+        }
+    }
+
+    & .nav {
+        margin-left: $rem-1 * 2;
+
+        & .nav {
+            margin-left: $rem-1 * 4;
+        }
+    }
+
+    &.vertical {
+        flex-direction: column;
+    }
+
+    &.grid {
+        width: 60%;
+    }
+}
+
+.dropdown-toggle {
+    // Generate the caret automatically
+    @include caret;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: auto;
+    left: auto;
+    z-index: $zindex-dropdown;
+    display: none; // none by default, but block on "open" of the menu
+    float: left;
+    min-width: $rem-1 * 10;
+    padding: 0;
+    margin: 0; // override default ul
+    font-size: $rem-1; // Redeclare because nesting can cause inheritance issues
+    text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+    list-style: none;
+    background-clip: padding-box;
+    background-color: $color-bg;
+    border: solid 1px $color-primary;
+    color: $color-primary;
+    min-width: $rem-1 * 10;
+    max-height: $rem-1 * 20;
+    overflow-y: auto;
+    overflow-x: visible;
+
+    &.active {
+        display: block;
+    }
+
+    & li {
+        padding: $rem-1 * 0.5 !important;
+
+        & > a {
+            color: $color-primary;
+            display: inline-block;
+            width: 100%;
+
+            &:hover {
+                color: darken($color-primary, 15%);
+            }
+        }
+    }
+
+    &.nav {
+        margin: 0;
+        padding: 0;
+
+        &.grid {
+            &.active {
+                display: flex;
+            }
+        }
+    }
+}
+
+@each $color, $value in $colors {
+    $hover-background: darken($value, 7.5%);
+    $hover-border: darken($value, 10%);
+    $active-background: darken($value, 10%);
+    $active-border: darken($value, 12.5%);
+
+    .dropdown-menu.dropdown-menu-#{$color} {
+        color: color-yiq($value);
+        background-color: $value;
+        border-color: $value;
+        box-shadow: none;
+
+        & > * {
+            & > a {
+                color: color-yiq($value);
+
+                &:hover {
+                    color: color-yiq($hover-background);
+                }
+            }
+
+            &:hover {
+                color: color-yiq($hover-background);
+                background-color: $hover-background;
+                border-color: $hover-border;
+            }
+            // Disabled comes first so active can properly restyle
+            &.disabled,
+            &:disabled {
+                background-color: $value;
+                border-color: $value;
+            }
+
+            &:not([disabled]):not(.disabled):active,
+            &:not([disabled]):not(.disabled).active,
+            .show > &.dropdown-toggle {
+                color: color-yiq($active-background);
+                background-color: $active-background;
+                border-color: $active-border;
+            }
+        }
+    }
+}
+
+.selectpicker {
+    .dropdown-menu {
+        li {
+            ul.nav {
+                flex-direction: column;
+            }
+
+            & > a {
+                width: auto;
+            }
+
+            &.active {
+                
+            }
+        }  
+    }
+}

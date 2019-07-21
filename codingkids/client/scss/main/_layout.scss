@@ -1,0 +1,13 @@
+main>h1, 
+main>h2,
+main>h3,
+main>.heading {
+    margin-top: $rem-1;
+}
+@media (min-width: $lg) {
+    .pane.main-pane {
+        main {
+            min-height: 500px;
+        }
+    }
+}

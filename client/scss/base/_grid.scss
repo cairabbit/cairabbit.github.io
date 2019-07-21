@@ -1,0 +1,58 @@
+$_columns: 20;
+
+
+.row {
+    width: 100%;
+    clear: both;
+
+    @for $i from 1 through $_columns {
+        .col-#{$i} {
+            flex: 0 0 percentage($i / $_columns);
+            max-width: percentage($i / $_columns);
+        }
+    }
+}
+
+@media (min-width: $sm) {
+    .row {
+        @for $i from 1 through $_columns {
+            .col-sm-#{$i} {
+                flex: 0 0 percentage($i / $_columns);
+                max-width: percentage($i / $_columns);
+            }
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .row {
+        @for $i from 1 through $_columns {
+            .col-md-#{$i} {
+                flex: 0 0 percentage($i / $_columns);
+                max-width: percentage($i / $_columns);
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .row {
+        @for $i from 1 through $_columns {
+            .col-lg-#{$i} {
+                flex: 0 0 percentage($i / $_columns);
+                max-width: percentage($i / $_columns);
+            }
+        }
+    }
+}
+
+@media (min-width: $xl) {
+    .row {
+        @for $i from 1 through $_columns {
+            .col-xl-#{$i} {
+                flex: 0 0 percentage($i / $_columns);
+                max-width: percentage($i / $_columns);
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.tabs {
+    & > ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        border-bottom: solid 1px $color-primary;
+
+        & > li {
+            padding: $rem-1 * 0.25;
+            margin-bottom: -1px;
+            border: solid 1px transparent;
+
+            & > a {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            &:hover {
+                background-color: $gray-200;
+                border-bottom: solid 1px $color-primary;
+            }
+
+            &.active {
+                color: $white;
+                background-color: $color-primary;
+                border-color: $color-primary;
+
+                & > a {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    & .tab-pane {
+        display: none;
+        padding-top: $rem-1 * .75;
+
+        &.active {
+            display: block;
+        }
+    }
+}

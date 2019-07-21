@@ -1,0 +1,43 @@
+hr {
+    margin-top: $rem-1;
+    margin-bottom: $rem-1;
+    border: 0;
+    border-top: solid 2px $gray-500;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+
+    &.thumb {
+        max-width: 192px;
+        max-height: 98px;
+    }
+
+    &.mini {
+        max-width: 96px;
+        max-height: 49px;
+    }
+}
+
+@media (min-width: $md) {
+    img.thumb {
+        max-width: 256px;
+        max-height: 144px;
+    }
+
+    img.mini {
+        max-width: 128px;
+        max-height: 122px;
+    }
+}
+@media (min-width: $lg) {
+    img.thumb {
+        max-width: 320px;
+        max-height: 180px;
+    }
+    img.mini {
+        max-width: 160px;
+        max-height: 90px;
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "baseUrl": ".",
+    "outDir": "static/js",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ]
+  },
+  "include": [
+    "client/ts/**/*.ts",
+    "codingkids/*/client/ts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "static",
+    "**/*.spec.ts"
+  ]
+}
