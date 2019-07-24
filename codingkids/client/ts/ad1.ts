@@ -1,4 +1,4 @@
-import * as styles from "../scss/main.scss";
+import * as styles from "../scss/ad1.scss";
 const css: any = (styles as any).default;
 
 

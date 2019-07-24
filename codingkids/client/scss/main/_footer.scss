@@ -1,140 +1,44 @@
 $_logo_height: 80px;
 
 footer {
-    padding-left: 0;
-    padding-right: 0;
-    background: darken($color-bg2, 5%);
-    color: $color-text;
-    border-top: solid 2px $color-primary;
+  padding-left: 0;
+  padding-right: 0;
+  background: darken($color-bg2, 5%);
+  color: $color-text;
+  border-top: solid 2px $color-primary;
 
-    & .site-logo {
-        & .logo {
-            height: $_logo_height;
-            vertical-align: bottom;
-        }
-
-        & h3 {
-            display: inline;
-            padding-left: $rem-1 * 0.25;
-        }
+  & .site-logo {
+    & .logo {
+      height: $_logo_height;
+      vertical-align: bottom;
     }
 
-    & .mini-footer {
-        margin-top: $rem-1 * 0.5;
-        & .search {
-            position: relative;
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
-
-            & input[type="search"] {
-                width: 60%;
-            }
-        }
+    & h3 {
+      display: inline;
+      padding-left: $rem-1 * 0.25;
     }
+  }
 
-    & .full-footer {
-        display: none;
+  & ul.nav {
+    display: flex;
+    padding-left: $rem-1;
+
+    & li {
+      list-style: none;
+      margin: $rem-1 * 0.25;
     }
-}
+  }
 
-@media (min-width: $lg) {
-    footer {
-        padding-top: $rem-1;
-        padding-bottom: $rem-1;
+  & .mini-footer {
+    & .search {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
 
-        & .mini-footer {
-            display: none;
-        }
-
-        & .full-footer {
-            display: flex;
-            justify-content: space-between;
-
-            & dl {
-                clear: both;
-
-                & dt {
-                    display: block;
-                    float: left;
-                    clear: left;
-                    margin-right: $rem-1;
-
-                    &:after {
-                        content: ":";
-                    }
-                }
-
-                & dd {
-                    display: block;
-                    float: left;
-                    clear: right;
-                }
-            }
-
-            & .copyright {
-                clear: both;
-            }
-
-            & .nav {
-                & > li a {
-                    color: $color-text;
-
-                    &:hover {
-                        color: $color-primary;
-                    }
-                }
-            }
-
-            & .qrcode {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-
-                & .nav {
-                    & li {
-                        text-align: center;
-                        max-width: 120px;
-                        margin: 0 $rem-1;
-
-                        & img {
-                            display: inline-block;
-                            clear: both;
-                            max-width: 120px;
-                            max-height: 120px;
-                            vertical-align: middle;
-                        }
-
-                        & span {
-                            display: inline-block;
-                            clear: both;
-                            padding-left: $rem-1 * 0.5;
-                            vertical-align: middle;
-                        }
-                    }
-                }
-            }
-
-            & .social {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-
-                & .nav {
-                    & li {
-                        width: $rem-1 * 4;
-                        margin-right: $rem-1;
-
-                        & a {
-                            text-align: center;
-
-                            & i {
-                                font-size: $rem-1 * 3;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      & input[type="search"] {
+        width: 60%;
+      }
     }
+  }
 }

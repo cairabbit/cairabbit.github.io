@@ -13,8 +13,11 @@
 @import "../../../client/scss/base/_tables.scss";
 @import "../../../client/scss/base/_forms.scss";
 
+@import "../../../client/scss/components/_images.scss";
+@import "../../../client/scss/components/_nav.scss";
+@import "../../../client/scss/components/_panel.scss";
+
 @import "./_variables.scss";
-@import "./main/_forms.scss";
 @import "./main/_layout.scss";
 @import "./main/_header.scss";
 @import "./main/_footer.scss";

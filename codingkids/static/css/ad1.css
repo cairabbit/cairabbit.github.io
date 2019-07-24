@@ -1,0 +1,40 @@
+header {
+  background: rgba(0, 103, 184, 0.4); }
+  header .mini-header {
+    background: none; }
+
+footer {
+  background: rgba(0, 103, 184, 0.4);
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+.bg1 {
+  background: url(/codingkids/img/ad1/bg1.png) no-repeat top left; }
+
+.bg2 {
+  background: url(/codingkids/img/ad1/bg2.png) no-repeat bottom right; }
+
+.bg3 {
+  background: url(/codingkids/img/ad1/bg3.png) no-repeat bottom left; }
+
+.bg4 {
+  background: url(/codingkids/img/ad1/bg4.png) no-repeat bottom left; }
+
+.bg5 {
+  background: url(/codingkids/img/ad1/bg5.png) no-repeat bottom center/contain; }
+
+.bg6 {
+  background: url(/codingkids/img/ad1/bg6.png) no-repeat bottom right; }
+
+.bg7 {
+  background: url(/codingkids/img/ad1/bg7.png) no-repeat top left; }
+
+.bg8 {
+  background: url(/codingkids/img/ad1/bg8.png) no-repeat top right; }

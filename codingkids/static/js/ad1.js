@@ -81,31 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./codingkids/client/ts/main.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./codingkids/client/ts/ad1.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./codingkids/client/scss/main.scss":
-/*!******************************************!*\
-  !*** ./codingkids/client/scss/main.scss ***!
-  \******************************************/
+/***/ "./codingkids/client/scss/ad1.scss":
+/*!*****************************************!*\
+  !*** ./codingkids/client/scss/ad1.scss ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"../codingkids/static/css/main.css\";\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb2RpbmdraWRzL2NsaWVudC9zY3NzL21haW4uc2Nzcz9lZWMxIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGlCQUFpQixxQkFBdUIiLCJmaWxlIjoiLi9jb2RpbmdraWRzL2NsaWVudC9zY3NzL21haW4uc2Nzcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyBcIi4uL2NvZGluZ2tpZHMvc3RhdGljL2Nzcy9tYWluLmNzc1wiOyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./codingkids/client/scss/main.scss\n");
+eval("module.exports = __webpack_require__.p + \"../codingkids/static/css/ad1.css\";\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb2RpbmdraWRzL2NsaWVudC9zY3NzL2FkMS5zY3NzP2NhYzEiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsaUJBQWlCLHFCQUF1QiIsImZpbGUiOiIuL2NvZGluZ2tpZHMvY2xpZW50L3Njc3MvYWQxLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IF9fd2VicGFja19wdWJsaWNfcGF0aF9fICsgXCIuLi9jb2RpbmdraWRzL3N0YXRpYy9jc3MvYWQxLmNzc1wiOyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./codingkids/client/scss/ad1.scss\n");
 
 /***/ }),
 
-/***/ "./codingkids/client/ts/main.ts":
-/*!**************************************!*\
-  !*** ./codingkids/client/ts/main.ts ***!
-  \**************************************/
+/***/ "./codingkids/client/ts/ad1.ts":
+/*!*************************************!*\
+  !*** ./codingkids/client/ts/ad1.ts ***!
+  \*************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./codingkids/client/scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);\n\r\nvar css = _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default.a;\r\n\r\njquery__WEBPACK_IMPORTED_MODULE_1__(function () {\r\n});\r\n\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb2RpbmdraWRzL2NsaWVudC90cy9tYWluLnRzP2M5MjMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUE0QztBQUM1QyxJQUFNLEdBQUcsR0FBUyxzREFBc0IsQ0FBQztBQUdiO0FBQzVCLG1DQUFDLENBQUM7QUFDRixDQUFDLENBQUMsQ0FBQyIsImZpbGUiOiIuL2NvZGluZ2tpZHMvY2xpZW50L3RzL21haW4udHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBzdHlsZXMgZnJvbSBcIi4uL3Njc3MvbWFpbi5zY3NzXCI7XHJcbmNvbnN0IGNzczogYW55ID0gKHN0eWxlcyBhcyBhbnkpLmRlZmF1bHQ7XG5cblxuaW1wb3J0ICogYXMgJCBmcm9tIFwianF1ZXJ5XCI7XG4kKGZ1bmN0aW9uICgpIHtcbn0pO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./codingkids/client/ts/main.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_ad1_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/ad1.scss */ \"./codingkids/client/scss/ad1.scss\");\n/* harmony import */ var _scss_ad1_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_ad1_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);\n\r\nvar css = _scss_ad1_scss__WEBPACK_IMPORTED_MODULE_0___default.a;\r\n\r\njquery__WEBPACK_IMPORTED_MODULE_1__(function () {\r\n});\r\n\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb2RpbmdraWRzL2NsaWVudC90cy9hZDEudHM/ZDcxNCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQTJDO0FBQzNDLElBQU0sR0FBRyxHQUFTLHFEQUFzQixDQUFDO0FBR2I7QUFDNUIsbUNBQUMsQ0FBQztBQUNGLENBQUMsQ0FBQyxDQUFDIiwiZmlsZSI6Ii4vY29kaW5na2lkcy9jbGllbnQvdHMvYWQxLnRzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgc3R5bGVzIGZyb20gXCIuLi9zY3NzL2FkMS5zY3NzXCI7XHJcbmNvbnN0IGNzczogYW55ID0gKHN0eWxlcyBhcyBhbnkpLmRlZmF1bHQ7XG5cblxuaW1wb3J0ICogYXMgJCBmcm9tIFwianF1ZXJ5XCI7XG4kKGZ1bmN0aW9uICgpIHtcbn0pO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./codingkids/client/ts/ad1.ts\n");
 
 /***/ }),
 
